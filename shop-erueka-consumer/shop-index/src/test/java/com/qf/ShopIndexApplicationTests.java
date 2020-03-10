@@ -8,7 +8,7 @@ class ShopIndexApplicationTests {
 
 	@Test
 	void contextLoads() {
-		System.out.println("快单给我提交啊啊啊");
+
 	}
 
 }
