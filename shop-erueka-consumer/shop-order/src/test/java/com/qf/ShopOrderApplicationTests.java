@@ -8,6 +8,7 @@ class ShopOrderApplicationTests {
 
 	@Test
 	void contextLoads() {
+		System.out.println("正确的版本");
 	}
 
 }
