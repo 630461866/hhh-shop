@@ -1,7 +1,5 @@
 package com.qf.service;
 
-import com.qf.entity.PCA;
-
 public interface PcaService {
     int deleteByPrimaryKey(Integer id);
 

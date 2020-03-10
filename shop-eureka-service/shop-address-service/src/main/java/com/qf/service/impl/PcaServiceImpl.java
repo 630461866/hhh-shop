@@ -1,7 +1,5 @@
 package com.qf.service.impl;
 
-import com.qf.entity.PCA;
-import com.qf.mapper.PCAMapper;
 import com.qf.service.PcaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
