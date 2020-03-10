@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="shop-address-service" />
+        <module name="shop-basic" />
+        <module name="shop-common" />
+        <module name="shop-entity" />
+        <module name="shop-erueka-consumer" />
+        <module name="shop-eureka-service" />
+        <module name="shop-index" />
+        <module name="shop-mapper" />
+        <module name="shop-order" />
+        <module name="shop-order-service" />
+        <module name="shop-product-service" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="shop-address-service" target="1.8" />
+      <module name="shop-api" target="1.5" />
+      <module name="shop-basic" target="1.5" />
+      <module name="shop-common" target="1.5" />
+      <module name="shop-entity" target="1.5" />
+      <module name="shop-erueka-consumer" target="1.5" />
+      <module name="shop-eureka-server" target="1.8" />
+      <module name="shop-eureka-service" target="1.5" />
+      <module name="shop-index" target="1.8" />
+      <module name="shop-mapper" target="1.5" />
+      <module name="shop-order" target="1.8" />
+      <module name="shop-order-service" target="1.8" />
+      <module name="shop-product-service" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

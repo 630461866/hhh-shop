@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qf.mapper.TOrderMapper">
+  <resultMap id="BaseResultMap" type="com.qf.entity.TOrder">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="o_sendtype" jdbcType="VARCHAR" property="oSendtype" />
+    <result column="o_paytype" jdbcType="VARCHAR" property="oPaytype" />
+    <result column="o_paycount" jdbcType="DOUBLE" property="oPaycount" />
+    <result column="o_orderdate" jdbcType="DATE" property="oOrderdate" />
+    <result column="o_status" jdbcType="INTEGER" property="oStatus" />
+    <result column="o_userid" jdbcType="INTEGER" property="oUserid" />
+    <result column="o_shperson" jdbcType="VARCHAR" property="oShperson" />
+    <result column="o_shphone" jdbcType="VARCHAR" property="oShphone" />
+    <result column="o_privince" jdbcType="VARCHAR" property="oPrivince" />
+    <result column="o_city" jdbcType="VARCHAR" property="oCity" />
+    <result column="o_area" jdbcType="VARCHAR" property="oArea" />
+    <result column="o_address_desc" jdbcType="VARCHAR" property="oAddressDesc" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, o_sendtype, o_paytype, o_paycount, o_orderdate, o_status, o_userid, o_shperson, 
+    o_shphone, o_privince, o_city, o_area, o_address_desc
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_order
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from t_order
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.qf.entity.TOrder">
+    insert into t_order (id, o_sendtype, o_paytype, 
+      o_paycount, o_orderdate, o_status, 
+      o_userid, o_shperson, o_shphone, 
+      o_privince, o_city, o_area, 
+      o_address_desc)
+    values (#{id,jdbcType=INTEGER}, #{oSendtype,jdbcType=VARCHAR}, #{oPaytype,jdbcType=VARCHAR}, 
+      #{oPaycount,jdbcType=DOUBLE}, #{oOrderdate,jdbcType=DATE}, #{oStatus,jdbcType=INTEGER}, 
+      #{oUserid,jdbcType=INTEGER}, #{oShperson,jdbcType=VARCHAR}, #{oShphone,jdbcType=VARCHAR}, 
+      #{oPrivince,jdbcType=VARCHAR}, #{oCity,jdbcType=VARCHAR}, #{oArea,jdbcType=VARCHAR}, 
+      #{oAddressDesc,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.qf.entity.TOrder">
+    insert into t_order
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="oSendtype != null">
+        o_sendtype,
+      </if>
+      <if test="oPaytype != null">
+        o_paytype,
+      </if>
+      <if test="oPaycount != null">
+        o_paycount,
+      </if>
+      <if test="oOrderdate != null">
+        o_orderdate,
+      </if>
+      <if test="oStatus != null">
+        o_status,
+      </if>
+      <if test="oUserid != null">
+        o_userid,
+      </if>
+      <if test="oShperson != null">
+        o_shperson,
+      </if>
+      <if test="oShphone != null">
+        o_shphone,
+      </if>
+      <if test="oPrivince != null">
+        o_privince,
+      </if>
+      <if test="oCity != null">
+        o_city,
+      </if>
+      <if test="oArea != null">
+        o_area,
+      </if>
+      <if test="oAddressDesc != null">
+        o_address_desc,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="oSendtype != null">
+        #{oSendtype,jdbcType=VARCHAR},
+      </if>
+      <if test="oPaytype != null">
+        #{oPaytype,jdbcType=VARCHAR},
+      </if>
+      <if test="oPaycount != null">
+        #{oPaycount,jdbcType=DOUBLE},
+      </if>
+      <if test="oOrderdate != null">
+        #{oOrderdate,jdbcType=DATE},
+      </if>
+      <if test="oStatus != null">
+        #{oStatus,jdbcType=INTEGER},
+      </if>
+      <if test="oUserid != null">
+        #{oUserid,jdbcType=INTEGER},
+      </if>
+      <if test="oShperson != null">
+        #{oShperson,jdbcType=VARCHAR},
+      </if>
+      <if test="oShphone != null">
+        #{oShphone,jdbcType=VARCHAR},
+      </if>
+      <if test="oPrivince != null">
+        #{oPrivince,jdbcType=VARCHAR},
+      </if>
+      <if test="oCity != null">
+        #{oCity,jdbcType=VARCHAR},
+      </if>
+      <if test="oArea != null">
+        #{oArea,jdbcType=VARCHAR},
+      </if>
+      <if test="oAddressDesc != null">
+        #{oAddressDesc,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qf.entity.TOrder">
+    update t_order
+    <set>
+      <if test="oSendtype != null">
+        o_sendtype = #{oSendtype,jdbcType=VARCHAR},
+      </if>
+      <if test="oPaytype != null">
+        o_paytype = #{oPaytype,jdbcType=VARCHAR},
+      </if>
+      <if test="oPaycount != null">
+        o_paycount = #{oPaycount,jdbcType=DOUBLE},
+      </if>
+      <if test="oOrderdate != null">
+        o_orderdate = #{oOrderdate,jdbcType=DATE},
+      </if>
+      <if test="oStatus != null">
+        o_status = #{oStatus,jdbcType=INTEGER},
+      </if>
+      <if test="oUserid != null">
+        o_userid = #{oUserid,jdbcType=INTEGER},
+      </if>
+      <if test="oShperson != null">
+        o_shperson = #{oShperson,jdbcType=VARCHAR},
+      </if>
+      <if test="oShphone != null">
+        o_shphone = #{oShphone,jdbcType=VARCHAR},
+      </if>
+      <if test="oPrivince != null">
+        o_privince = #{oPrivince,jdbcType=VARCHAR},
+      </if>
+      <if test="oCity != null">
+        o_city = #{oCity,jdbcType=VARCHAR},
+      </if>
+      <if test="oArea != null">
+        o_area = #{oArea,jdbcType=VARCHAR},
+      </if>
+      <if test="oAddressDesc != null">
+        o_address_desc = #{oAddressDesc,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qf.entity.TOrder">
+    update t_order
+    set o_sendtype = #{oSendtype,jdbcType=VARCHAR},
+      o_paytype = #{oPaytype,jdbcType=VARCHAR},
+      o_paycount = #{oPaycount,jdbcType=DOUBLE},
+      o_orderdate = #{oOrderdate,jdbcType=DATE},
+      o_status = #{oStatus,jdbcType=INTEGER},
+      o_userid = #{oUserid,jdbcType=INTEGER},
+      o_shperson = #{oShperson,jdbcType=VARCHAR},
+      o_shphone = #{oShphone,jdbcType=VARCHAR},
+      o_privince = #{oPrivince,jdbcType=VARCHAR},
+      o_city = #{oCity,jdbcType=VARCHAR},
+      o_area = #{oArea,jdbcType=VARCHAR},
+      o_address_desc = #{oAddressDesc,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

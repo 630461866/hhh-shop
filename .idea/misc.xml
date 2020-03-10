@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/shop-api/pom.xml" />
+        <option value="$PROJECT_DIR$/shop-basic/pom.xml" />
+        <option value="$PROJECT_DIR$/shop-erueka-consumer/pom.xml" />
+        <option value="$PROJECT_DIR$/shop-eureka-server/pom.xml" />
+        <option value="$PROJECT_DIR$/shop-eureka-service/pom.xml" />
+        <option value="$PROJECT_DIR$/shop-basic/shop-common/pom.xml" />
+        <option value="$PROJECT_DIR$/shop-erueka-consumer/shop-index/pom.xml" />
+        <option value="$PROJECT_DIR$/shop-basic/shop-entity/pom.xml" />
+        <option value="$PROJECT_DIR$/shop-basic/shop-mapper/pom.xml" />
+        <option value="$PROJECT_DIR$/shop-eureka-service/shop-product-service/pom.xml" />
+        <option value="$PROJECT_DIR$/shop-eureka-service/shop-order-service/pom.xml" />
+        <option value="$PROJECT_DIR$/shop-erueka-consumer/shop-order/pom.xml" />
+        <option value="$PROJECT_DIR$/shop-eureka-service/shop-address-service/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
+</project>

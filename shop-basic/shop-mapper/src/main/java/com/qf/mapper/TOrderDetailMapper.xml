@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qf.mapper.TOrderDetailMapper">
+  <resultMap id="BaseResultMap" type="com.qf.entity.TOrderDetail">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="goods_date" jdbcType="DATE" property="goodsDate" />
+    <result column="o_orderid" jdbcType="INTEGER" property="oOrderid" />
+    <result column="goodsid" jdbcType="INTEGER" property="goodsid" />
+    <result column="goodsname" jdbcType="VARCHAR" property="goodsname" />
+    <result column="goodsprice" jdbcType="DOUBLE" property="goodsprice" />
+    <result column="goods_description" jdbcType="VARCHAR" property="goodsDescription" />
+    <result column="goodsnum" jdbcType="INTEGER" property="goodsnum" />
+    <result column="goodspic" jdbcType="VARCHAR" property="goodspic" />
+    <result column="goods_total_price" jdbcType="DOUBLE" property="goodsTotalPrice" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, goods_date, o_orderid, goodsid, goodsname, goodsprice, goods_description, goodsnum, 
+    goodspic, goods_total_price
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_order_detail
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from t_order_detail
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.qf.entity.TOrderDetail">
+    insert into t_order_detail (id, goods_date, o_orderid, 
+      goodsid, goodsname, goodsprice, 
+      goods_description, goodsnum, goodspic, 
+      goods_total_price)
+    values (#{id,jdbcType=INTEGER}, #{goodsDate,jdbcType=DATE}, #{oOrderid,jdbcType=INTEGER}, 
+      #{goodsid,jdbcType=INTEGER}, #{goodsname,jdbcType=VARCHAR}, #{goodsprice,jdbcType=DOUBLE}, 
+      #{goodsDescription,jdbcType=VARCHAR}, #{goodsnum,jdbcType=INTEGER}, #{goodspic,jdbcType=VARCHAR}, 
+      #{goodsTotalPrice,jdbcType=DOUBLE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.qf.entity.TOrderDetail">
+    insert into t_order_detail
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="goodsDate != null">
+        goods_date,
+      </if>
+      <if test="oOrderid != null">
+        o_orderid,
+      </if>
+      <if test="goodsid != null">
+        goodsid,
+      </if>
+      <if test="goodsname != null">
+        goodsname,
+      </if>
+      <if test="goodsprice != null">
+        goodsprice,
+      </if>
+      <if test="goodsDescription != null">
+        goods_description,
+      </if>
+      <if test="goodsnum != null">
+        goodsnum,
+      </if>
+      <if test="goodspic != null">
+        goodspic,
+      </if>
+      <if test="goodsTotalPrice != null">
+        goods_total_price,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="goodsDate != null">
+        #{goodsDate,jdbcType=DATE},
+      </if>
+      <if test="oOrderid != null">
+        #{oOrderid,jdbcType=INTEGER},
+      </if>
+      <if test="goodsid != null">
+        #{goodsid,jdbcType=INTEGER},
+      </if>
+      <if test="goodsname != null">
+        #{goodsname,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsprice != null">
+        #{goodsprice,jdbcType=DOUBLE},
+      </if>
+      <if test="goodsDescription != null">
+        #{goodsDescription,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsnum != null">
+        #{goodsnum,jdbcType=INTEGER},
+      </if>
+      <if test="goodspic != null">
+        #{goodspic,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsTotalPrice != null">
+        #{goodsTotalPrice,jdbcType=DOUBLE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qf.entity.TOrderDetail">
+    update t_order_detail
+    <set>
+      <if test="goodsDate != null">
+        goods_date = #{goodsDate,jdbcType=DATE},
+      </if>
+      <if test="oOrderid != null">
+        o_orderid = #{oOrderid,jdbcType=INTEGER},
+      </if>
+      <if test="goodsid != null">
+        goodsid = #{goodsid,jdbcType=INTEGER},
+      </if>
+      <if test="goodsname != null">
+        goodsname = #{goodsname,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsprice != null">
+        goodsprice = #{goodsprice,jdbcType=DOUBLE},
+      </if>
+      <if test="goodsDescription != null">
+        goods_description = #{goodsDescription,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsnum != null">
+        goodsnum = #{goodsnum,jdbcType=INTEGER},
+      </if>
+      <if test="goodspic != null">
+        goodspic = #{goodspic,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsTotalPrice != null">
+        goods_total_price = #{goodsTotalPrice,jdbcType=DOUBLE},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qf.entity.TOrderDetail">
+    update t_order_detail
+    set goods_date = #{goodsDate,jdbcType=DATE},
+      o_orderid = #{oOrderid,jdbcType=INTEGER},
+      goodsid = #{goodsid,jdbcType=INTEGER},
+      goodsname = #{goodsname,jdbcType=VARCHAR},
+      goodsprice = #{goodsprice,jdbcType=DOUBLE},
+      goods_description = #{goodsDescription,jdbcType=VARCHAR},
+      goodsnum = #{goodsnum,jdbcType=INTEGER},
+      goodspic = #{goodspic,jdbcType=VARCHAR},
+      goods_total_price = #{goodsTotalPrice,jdbcType=DOUBLE}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
