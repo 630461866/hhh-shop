@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: shop-index
+
+server:
+  port: 9091
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://175.24.77.8:8761/eureka/
