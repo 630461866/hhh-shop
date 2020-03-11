@@ -1,7 +1,7 @@
 package com.qf.controller;
 
-import com.qf.entity.TProduct;
-import com.qf.service.IProductService;
+import com.qf.entity.TProductType;
+import com.qf.service.IProductTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,12 +15,12 @@ import java.util.List;
 public class ListController {
 
     @Autowired
-    private IProductService productService;
+    private IProductTypeService productTypeService;
 
     @RequestMapping("show")
     @ResponseBody
-    public List<TProduct> show(Model model){
-        List<TProduct> list = productService.list();
+    public List<TProductType> show(Model model){
+        List<TProductType> list = productTypeService.list();
         return list;
     }
 

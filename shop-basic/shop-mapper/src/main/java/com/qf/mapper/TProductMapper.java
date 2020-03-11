@@ -2,8 +2,6 @@ package com.qf.mapper;
 
 import com.qf.entity.TProduct;
 
-import java.util.List;
-
 public interface TProductMapper {
     int deleteByPrimaryKey(Long pid);
 
@@ -18,5 +16,5 @@ public interface TProductMapper {
     int updateByPrimaryKey(TProduct record);
 
 
-    List<TProduct> list();
+
 }

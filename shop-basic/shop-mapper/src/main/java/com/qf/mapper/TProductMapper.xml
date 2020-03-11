@@ -175,9 +175,7 @@
     where pid = #{pid,jdbcType=BIGINT}
   </update>
 
-  <select id="list" resultMap="BaseResultMap">
-    select * from t_product
-  </select>
+
 
 
 </mapper>
