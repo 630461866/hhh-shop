@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: email-service
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/qf-v6?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: 199907
+
+  mail:
+    host: smtp.qq.com
+    username: 2505560247@qq.com
+    password: waimfbwecwijebeg
+    default-encoding: utf-8
+server:
+  port: 9089
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://175.24.77.8:8761/eureka/
+
+activeServerUrl: http://localhost:9089/email/active/account/

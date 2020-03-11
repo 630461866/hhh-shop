@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: shop-phone-register
+  redis:
+    host: 175.24.77.8
+
+  rabbitmq:
+    host: 175.24.77.8
+    port: 5672
+    username: zj
+    password: root
+    virtual-host: demo
+server:
+  port: 8088
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://175.24.77.8:8761/eureka/
+

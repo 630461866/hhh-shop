@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: email-regist-web
+
+  redis:
+    host: 175.24.77.8
+    port: 6379
+    password:
+    timeout:
+server:
+  port: 8089
+
+
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://175.24.77.8:8761/eureka/

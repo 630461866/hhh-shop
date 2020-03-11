@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: shop-phoneregister-server
+  redis:
+    host: 175.24.77.8
+    port: 6379
+    password:
+    timeout:
+
+  rabbitmq:
+    host: 175.24.77.8
+    port: 5672
+    username: zj
+    password: root
+    virtual-host: demo
+
+server:
+  port: 9088
+
+sms:
+  account: JSM42639
+  password: l43d7myq
+  veryCode: irnsloy2kjhd
+  http_url: http://112.74.76.186:8030
+
+  tplId: JSM42639-0001
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://175.24.77.8:8761/eureka/
