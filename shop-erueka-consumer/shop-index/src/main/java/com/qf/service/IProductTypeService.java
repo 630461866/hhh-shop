@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 
-@FeignClient(value = "shop-product-service")
+@FeignClient(value = "shop-index-service")
 public interface IProductTypeService {
 
     @RequestMapping("index/show")

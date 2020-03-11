@@ -1,7 +1,7 @@
 
 spring:
   application:
-    name: shop-product-service
+    name: shop-index-service
   datasource:
       driver-class-name: com.mysql.jdbc.Driver
       url: jdbc:mysql:///qf-v6?serverTimezone=UTC
