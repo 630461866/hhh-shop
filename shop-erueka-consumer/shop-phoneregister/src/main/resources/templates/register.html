@@ -134,6 +134,7 @@
 						</div>
 					</div>
 	</body>
+<script src="js/jquery.min.js"></script>
 <script type="text/javascript">
     function sendMobileCode(){
         var phone = $("#phone").val();
@@ -145,6 +146,28 @@
                     alert("验证码已发送到您手机上，请查收！");
             }
         });
+        function pregist(){
+            var phone = $("#phone").val();
+            var code = $('#code').val();
+            var password = $("#password").val();
+            $.ajax({
+                url: '/user/doRegist',
+                type: 'post',
+                data:{
+                    "phone":phone,
+                    "code":code,
+                    "password":password
+                },
+                dataType:'json',
+                success:function(d){
+                    alert(d.message);
+                }
+
+
+            })
+
+
+        }
     }
 </script>
 

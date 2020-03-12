@@ -14,4 +14,7 @@ public interface TUserMapper {
     int updateByPrimaryKeySelective(TUser record);
 
     int updateByPrimaryKey(TUser record);
+
+    //查询用户名是否存在
+    TUser selectByUsername(String uname);
 }

@@ -1,6 +1,8 @@
 package com.qf.dto;
 
 
+
+
 import com.qf.entity.TProduct;
 
 import java.io.Serializable;

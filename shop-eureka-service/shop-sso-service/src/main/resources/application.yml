@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: shop-sso-service
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/qf-v6?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: 199907
+
+server:
+  port: 9090
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://175.24.77.8:8761/eureka/

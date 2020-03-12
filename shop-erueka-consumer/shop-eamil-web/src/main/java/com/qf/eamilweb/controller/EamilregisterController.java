@@ -24,8 +24,8 @@ import java.util.concurrent.TimeUnit;
 public class EamilregisterController {
 
    /* @Autowired
-    private IemailService service;
-*/
+    private IemailService service;*/
+
     @Autowired
     private RestTemplate restTemplate;
 
@@ -37,6 +37,10 @@ public class EamilregisterController {
                                     @PathVariable String password){
         //1.生成uuid
         String uuid = UUID.randomUUID().toString();
+        System.out.println(uuid);
+        System.out.println(uuid);
+        System.out.println(uuid);
+        System.out.println(uuid);
         //2.发邮件  通过ribbon来调用
         String url = String.format("http://email-service/email/send/%s/%s", addr, uuid);
         ResultBean resultBean = restTemplate.getForObject(url, ResultBean.class);
@@ -48,10 +52,10 @@ public class EamilregisterController {
                     RedisConstant.REGIST_EMAIL_URL_KEY_PRE,
                     uuid),addr,15, TimeUnit.MINUTES);
             //4.去数据库中创建该用户
-//            result = restTemplate.getForObject(String.format("http://regist-service/user/regist/%s/%s", addr, password), ResultBean.class);
+            result = restTemplate.getForObject(String.format("http://email-service/user/regist/%s/%s", addr, password), ResultBean.class);
         }
 
-        return ResultBean.success("注册成功");
+        return result;
     }
 
 }

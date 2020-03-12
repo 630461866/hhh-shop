@@ -2,7 +2,6 @@ package com.qf.phoneregisterservice.handler;
 
 
 
-import com.qf.constant.RedisConstant;
 import com.qf.phoneregisterservice.util.SmsUtil;
 import com.qf.util.StringUtil;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
@@ -11,8 +10,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;
 
-import java.util.concurrent.TimeUnit;
 
+import java.util.concurrent.TimeUnit;
 
 @Component
 public class SMSHandler {

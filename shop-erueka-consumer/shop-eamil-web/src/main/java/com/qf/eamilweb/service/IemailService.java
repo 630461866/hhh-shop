@@ -12,6 +12,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 @FeignClient(value = "email-service")
 public interface IemailService {
 
-    @RequestMapping("user/regist")
+    @RequestMapping("user/email")
     ResultBean regist(@RequestParam String uname, @RequestParam String password);
 }
