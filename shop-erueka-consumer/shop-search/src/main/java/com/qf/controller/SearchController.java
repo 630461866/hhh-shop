@@ -19,12 +19,17 @@ public class SearchController {
     public String searchByKeyword(String keyword, Model model){
 
       ResultBean resultBean = searchService.searchByKeyword(keyword);
-
+        System.out.println(resultBean.getData());
       //List<TProductSearchDTO>
         model.addAttribute("products",resultBean.getData());
 
         return "search";
 
+    }
+
+    @RequestMapping("addProduct")
+    public ResultBean addProduct(Long pid){
+        return searchService.addProduct(pid);
     }
 
 

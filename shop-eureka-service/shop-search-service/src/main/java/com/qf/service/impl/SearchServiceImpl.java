@@ -9,6 +9,7 @@ import org.apache.solr.client.solrj.SolrQuery;
 import org.apache.solr.client.solrj.response.QueryResponse;
 import org.apache.solr.common.SolrDocument;
 import org.apache.solr.common.SolrDocumentList;
+import org.apache.solr.common.SolrInputDocument;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -31,7 +32,7 @@ public class SearchServiceImpl implements ISearchService{
 
         //创建查询对象
         SolrQuery query = new SolrQuery();
-        query.set("df","t_product_keywords");
+        query.set("df","t_item_keywords");
         query.setQuery(keyword);
 
         //分页
@@ -67,7 +68,7 @@ public class SearchServiceImpl implements ISearchService{
                 String t_product_name = list.get(0);
                 product.settProductName(t_product_name);
 
-                Float t_product_sale_price = (Float) document.getFieldValue("t_product_sale_price");
+                Double t_product_sale_price = (Double) document.getFieldValue("t_product_sale_price");
                 product.settProductSalePrice(new BigDecimal(t_product_sale_price));
                 String t_product_pimage = (String) document.getFieldValue("t_product_pimage");
                 product.settProductPimage(t_product_pimage);
@@ -87,6 +88,30 @@ public class SearchServiceImpl implements ISearchService{
         return ResultBean.error("查询出现异常");
     }
 
+    @Override
+    public ResultBean addProduct(Long pid) {
+
+        //根据pid从数据库中获取该商品
+        TProductSearchDTO product = mapper.selectById(pid);
+
+        SolrInputDocument document = new SolrInputDocument();
+        document.setField("id",product.getId().toString());
+        document.setField("t_product_name",product.gettProductName());
+        document.setField("t_product_sale_price",product.gettProductSalePrice().floatValue());
+        document.setField("t_product_pimage",product.gettProductPimage());
+        document.setField("t_product_pdesc",product.gettProductPdesc());
+
+        try {
+            solrClient.add(document);
+            solrClient.commit();
+            return ResultBean.success("插入搜索库成功");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+        return ResultBean.error("插入搜索库失败");
+    }
 
 
 }

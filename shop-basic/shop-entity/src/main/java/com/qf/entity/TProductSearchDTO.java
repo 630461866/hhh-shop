@@ -74,4 +74,15 @@ public class TProductSearchDTO implements Serializable {
     public void settProductPdesc(String tProductPdesc) {
         this.tProductPdesc = tProductPdesc;
     }
+
+    @Override
+    public String toString() {
+        return "TProductSearchDTO{" +
+                "id=" + id +
+                ", tProductName='" + tProductName + '\'' +
+                ", tProductSalePrice=" + tProductSalePrice +
+                ", tProductPimage='" + tProductPimage + '\'' +
+                ", tProductPdesc='" + tProductPdesc + '\'' +
+                '}';
+    }
 }

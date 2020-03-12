@@ -5,7 +5,7 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<base href="http://admin.qf.com/">
+		<base href="/">
 		<title>搜索页面</title>
 
 		<link href="AmazeUI-2.4.2/assets/css/amazeui.css" rel="stylesheet" type="text/css" />
@@ -164,7 +164,7 @@
 
 								<ul class="am-avg-sm-2 am-avg-md-3 am-avg-lg-4 boxes">
 
-									<li th:onclick="|intoProductInfo(${pro.id})|" th:each="pro : ${products}">
+									<li  th:each="pro : ${products}">
 										<div class="i-pic limit">
 											<img th:src="${pro.tProductPimage}" />
 											<p class="title fl"><span th:utext="${pro.tProductName}"></span></p>
