@@ -1,8 +1,8 @@
 package com.qf.ssoservice.service;
 
 import com.qf.dto.ResultBean;
-
 import org.springframework.web.bind.annotation.RequestParam;
+
 
 /**
  * @Author: zhangjia
@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  */
 public interface IUserservice {
 
-
     ResultBean checkLogin( String uname, String password);
+
+    ResultBean checkIsLogin(String uuid);
 }

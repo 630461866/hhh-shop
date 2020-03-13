@@ -1853,20 +1853,18 @@
 		</script>
 		<script type="text/javascript " src="/basic/js/quick_links.js "></script>
 
-        <script src="js/jquery.js"></script>
-        <script>
-
+	<script src="js/jquery.js"></script>
+	<script>
         $.ajax({
-            // url: "http://localhost:9083/user/checkIsLogin",
 			url: "/checkIsLogin",
             success: function(d){
+                alert("cookie存入成功")
 					console.log(d);
 					if(d.errno==0){
 						//登录成功
-						$("#loginDiv").html("<a href=\"#\" target=\"_top\" class=\"h\">欢迎你，"+d.data.uname+"</a>\n" +
-								"                <a href=\"#\" target=\"_top\">注销</a>");
-					}
-
+                        $("#loginDiv").html("<a href=\"#\" target=\"_top\" class=\"h\">欢迎你，"+d.data.uname+"</a>\n" +
+                            "                <a href=\"#\" target=\"_top\">注销</a>");
+                    }
             },
             //允许携带证书
             xhrFields: {

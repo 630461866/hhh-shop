@@ -1,8 +1,9 @@
 package com.qf.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class TUser {
+public class TUser implements Serializable {
     private Long id;
 
     private String uname;
