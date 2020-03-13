@@ -11,5 +11,10 @@ public interface IProductTypeService {
 
     @RequestMapping("index/show")
     List<TProductType> list();
-
+    
 }
+
+
+
+
+
