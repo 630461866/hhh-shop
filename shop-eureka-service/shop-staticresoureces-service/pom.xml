@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.qf</groupId>
-	<artifactId>shop-search-service</artifactId>
+	<artifactId>shop-staticresoureces-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>shop-search-service</name>
+	<name>shop-staticresoureces-service</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
@@ -22,8 +22,9 @@
 	<dependencies>
 
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-solr</artifactId>
+			<groupId>com.qf</groupId>
+			<artifactId>shop-common</artifactId>
+			<version>1.0-SNAPSHOT</version>
 		</dependency>
 
 		<dependency>
@@ -32,33 +33,15 @@
 		</dependency>
 
 		<dependency>
-			<groupId>com.qf</groupId>
-			<artifactId>shop-mapper</artifactId>
-			<version>1.0-SNAPSHOT</version>
-		</dependency>
-
-
-		<dependency>
-			<groupId>org.mybatis.spring.boot</groupId>
-			<artifactId>mybatis-spring-boot-starter</artifactId>
-			<version>2.1.1</version>
-		</dependency>
-
-		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>com.qf</groupId>
-			<artifactId>shop-common</artifactId>
-			<version>1.0-SNAPSHOT</version>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-freemarker</artifactId>
 		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
@@ -75,20 +58,6 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-
-
-		<!--<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-solr</artifactId>
-		</dependency>-->
-
-		<!--
-
-
-
-
-
-		-->
 	</dependencies>
 
 	<dependencyManagement>

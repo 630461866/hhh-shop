@@ -1,0 +1,22 @@
+
+spring:
+  application:
+    name: shop-staticresoureces-service
+
+  rabbitmq:
+      host: 175.24.77.8
+      port: 5672
+      username: zj
+      password: root
+      virtual-host: demo
+
+server:
+  port: 8011
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://175.24.77.8:8761/eureka/
+
+imageServer: http://175.24.77.8:8888/
+resourcesPath: /usr/local/docker/nginx/wwwroot/hhh-shop/
