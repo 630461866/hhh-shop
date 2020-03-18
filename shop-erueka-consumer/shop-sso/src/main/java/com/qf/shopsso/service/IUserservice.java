@@ -16,5 +16,5 @@ public interface IUserservice {
     ResultBean checkLogin(@RequestParam("uname") String uname,@RequestParam("password") String password);
 
     @RequestMapping("user/checkIsLogin")
-    ResultBean checkIsLogin(@RequestParam("uuid") String uuid);
+    ResultBean checkIsLogin( String uuid);
 }

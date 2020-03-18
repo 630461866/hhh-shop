@@ -7,11 +7,19 @@ spring:
     username: root
     password: 199907
 
+  rabbitmq:
+    host: 175.24.77.8
+    port: 5672
+    username: zj
+    password: root
+    virtual-host: demo
+
   mail:
     host: smtp.qq.com
     username: 2505560247@qq.com
     password: waimfbwecwijebeg
     default-encoding: utf-8
+
 server:
   port: 9089
 
@@ -20,4 +28,4 @@ eureka:
     serviceUrl:
       defaultZone: http://175.24.77.8:8761/eureka/
 
-activeServerUrl: http://localhost:9089/email/active/account/
+activeAccountServer: http://localhost:9089/email/active?=uuid

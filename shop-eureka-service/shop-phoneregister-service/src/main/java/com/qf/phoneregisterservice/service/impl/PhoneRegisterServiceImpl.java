@@ -33,6 +33,9 @@ public class PhoneRegisterServiceImpl  implements IUserService {
         String redisKey = StringUtil.getRedisKey(RedisConstant.REGISTER_PHONE, phone);
         String  redisCode= (String) redisTemplate.opsForValue().get(redisKey);
         System.out.println(redisCode);
+        System.out.println(redisCode);
+        System.out.println(redisCode);
+        System.out.println(redisCode);
         //判断验证码是否正确
         if (code.equals(redisCode)){
             TUser user = new TUser();

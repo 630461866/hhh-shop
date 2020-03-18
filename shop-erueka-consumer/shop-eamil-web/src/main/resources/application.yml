@@ -7,6 +7,14 @@ spring:
     port: 6379
     password:
     timeout:
+
+  rabbitmq:
+    host: 175.24.77.8
+    port: 5672
+    username: zj
+    password: root
+    virtual-host: demo
+
 server:
   port: 8089
 

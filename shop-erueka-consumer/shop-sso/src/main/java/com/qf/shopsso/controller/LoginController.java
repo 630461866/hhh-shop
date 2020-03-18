@@ -82,22 +82,21 @@ public class LoginController {
     public ResultBean checkIsLogin(@CookieValue(name = CookieConstant.USER_LOGIN,required = false) String uuid, HttpServletRequest request){
         //user_login
         //验证我当前是否已登录
-//        Cookie[] cookies = request.getCookies();
-//        if(cookies!=null){
-//            for (Cookie cookie : cookies) {
-//                if(CookieConstant.USER_LOGIN.equals(cookie.getName())){
-//                    //找到这个cookie
-//                    //拿到cookie的值，组织redis的键
-//                    String uuid = cookie.getValue();
-//                    String redisKey = StringUtil.getRedisKey(RedisConstant.USER_LOGIN_PRE, uuid);
-//                    Object o = redisTemplate.opsForValue().get(redisKey);
-//                    if(o!=null){
-//                        return ResultBean.success(o,"用户已登录");
-//                    }
-//                }
-//            }
-//        }
-
+        Cookie[] cookies = request.getCookies();
+        if(cookies!=null){
+            for (Cookie cookie : cookies) {
+                if(CookieConstant.USER_LOGIN.equals(cookie.getName())){
+                    //找到这个cookie
+                    //拿到cookie的值，组织redis的键
+                     uuid = cookie.getValue();
+                    String redisKey = StringUtil.getRedisKey(RedisConstant.USER_LOGIN_PRE, uuid);
+                    Object o = redisTemplate.opsForValue().get(redisKey);
+                    if(o!=null){
+                        return ResultBean.success(o,"用户已登录");
+                    }
+                }
+            }
+        }
         return userService.checkIsLogin(uuid);
 
     }

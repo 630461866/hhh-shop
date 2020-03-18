@@ -34,6 +34,7 @@ public class RegisterController {
     @RequestMapping("getCode")
     @ResponseBody
     public  ResultBean getCode(String phone){
+        ////使用mq让第三方短信服务商来发送短信
         rabbitTemplate.convertAndSend("my-phone-register","sms.send",phone);
         return ResultBean.success();
     }

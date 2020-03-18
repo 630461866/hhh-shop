@@ -6,6 +6,7 @@ spring:
     url: jdbc:mysql://localhost:3306/qf-v6?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai
     username: root
     password: 199907
+
   redis:
     host: 175.24.77.8
     port: 6379
@@ -23,12 +24,10 @@ server:
   port: 9088
 
 sms:
-  account: JSM42639
-  password: l43d7myq
-  veryCode: irnsloy2kjhd
-  http_url: http://112.74.76.186:8030
-
-  tplId: JSM42639-0001
+  Url: http://106.ihuyi.cn/webservice/sms.php?method=Submit
+  account: C32284572
+  password: 55c71d13888f723101291d8d0c6ada21
+  mobile: 19918805818
 
 eureka:
   client:

@@ -5,7 +5,6 @@ import com.qf.constant.CookieConstant;
 import com.qf.dto.ResultBean;
 import com.qf.entity.TProductType;
 import com.qf.service.IProductTypeService;
-import com.qf.service.IUserService;
 import com.qf.util.HttpClientUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,8 +21,6 @@ public class IndexController {
     @Autowired
     private IProductTypeService productTypeService;
 
-    @Autowired
-    private IUserService userService;
 
     @RequestMapping({"","index"})
     public String show(Model model){

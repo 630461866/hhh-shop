@@ -1858,8 +1858,7 @@
         $.ajax({
 			url: "/checkIsLogin",
             success: function(d){
-                alert("cookie存入成功")
-					console.log(d);
+					console.log(d)
 					if(d.errno==0){
 						//登录成功
                         $("#loginDiv").html("<a href=\"#\" target=\"_top\" class=\"h\">欢迎你，"+d.data.uname+"</a>\n" +
@@ -1874,8 +1873,6 @@
             crossDomain: true,
             dataType: "json"
         })
-
-
 
         </script>
 	</body>

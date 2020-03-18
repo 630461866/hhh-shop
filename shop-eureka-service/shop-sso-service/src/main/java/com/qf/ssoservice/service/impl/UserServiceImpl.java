@@ -40,6 +40,9 @@ public class UserServiceImpl implements IUserservice {
         return ResultBean.error("用户名或密码错误");
     }
 
+    /**
+     * 根据uuid组织键，去redis中查有没有相应的登录信息
+     * */
     @Override
     public ResultBean checkIsLogin(String uuid) {
         if(uuid!=null&&!"".equals(uuid)){
