@@ -1,5 +1,7 @@
 package com.qf.service.impl;
 
+import com.qf.entity.TAddress;
+import com.qf.mapper.TAddressMapper;
 import com.qf.service.AddressServcie;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

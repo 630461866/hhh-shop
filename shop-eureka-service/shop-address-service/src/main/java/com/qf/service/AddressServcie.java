@@ -1,5 +1,7 @@
 package com.qf.service;
 
+import com.qf.entity.TAddress;
+
 public interface AddressServcie {
     int deleteByPrimaryKey(Integer id);
 
