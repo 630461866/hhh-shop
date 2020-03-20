@@ -5,5 +5,7 @@ public interface RedisConstant {
 
     String REGISTER_PHONE = "register:phone:";
     String USER_LOGIN_PRE = "user:login:";
+    String USER_CART_PRE = "user:cart:";
+    String PRODUCT_PRE = "product:";
     String REGISTER_EMAIL = "register:email:";
 }

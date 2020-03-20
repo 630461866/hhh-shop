@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: shop-car
+
+server:
+  port: 2222
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://175.24.77.8:8761/eureka/

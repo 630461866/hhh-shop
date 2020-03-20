@@ -1,8 +1,9 @@
 package com.qf.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class TProduct {
+public class TProduct implements Serializable{
     private Long pid;
 
     private String pname;
