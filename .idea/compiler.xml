@@ -6,33 +6,61 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="shop-address" />
         <module name="shop-address-service" />
         <module name="shop-basic" />
         <module name="shop-common" />
+        <module name="shop-coupon-service" />
+        <module name="shop-eamil-web" />
+        <module name="shop-email-service" />
         <module name="shop-entity" />
         <module name="shop-erueka-consumer" />
         <module name="shop-eureka-service" />
         <module name="shop-index" />
+        <module name="shop-index-service" />
         <module name="shop-mapper" />
         <module name="shop-order" />
         <module name="shop-order-service" />
+        <module name="shop-pay-service" />
+        <module name="shop-phoneregister" />
+        <module name="shop-phoneregister-service" />
         <module name="shop-product-service" />
+        <module name="shop-search" />
+        <module name="shop-search-service" />
+        <module name="shop-searchproduct-service" />
+        <module name="shop-sso" />
+        <module name="shop-sso-service" />
+        <module name="shop-staticresoureces-service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="shop-address" target="1.8" />
       <module name="shop-address-service" target="1.8" />
       <module name="shop-api" target="1.5" />
       <module name="shop-basic" target="1.5" />
       <module name="shop-common" target="1.5" />
+      <module name="shop-coupon-service" target="1.8" />
+      <module name="shop-eamil-web" target="1.8" />
+      <module name="shop-email-service" target="1.8" />
       <module name="shop-entity" target="1.5" />
       <module name="shop-erueka-consumer" target="1.5" />
       <module name="shop-eureka-server" target="1.8" />
       <module name="shop-eureka-service" target="1.5" />
       <module name="shop-index" target="1.8" />
+      <module name="shop-index-service" target="1.8" />
       <module name="shop-mapper" target="1.5" />
       <module name="shop-order" target="1.8" />
       <module name="shop-order-service" target="1.8" />
+      <module name="shop-pay-service" target="1.8" />
+      <module name="shop-phoneregister" target="1.8" />
+      <module name="shop-phoneregister-service" target="1.8" />
       <module name="shop-product-service" target="1.8" />
+      <module name="shop-search" target="1.8" />
+      <module name="shop-search-service" target="1.8" />
+      <module name="shop-searchproduct-service" target="1.8" />
+      <module name="shop-sso" target="1.8" />
+      <module name="shop-sso-service" target="1.8" />
+      <module name="shop-staticresoureces-service" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

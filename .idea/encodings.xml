@@ -1,10 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/shop-erueka-consumer/shop-address" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/shop-erueka-consumer/shop-eamil-web" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/shop-erueka-consumer/shop-index" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/shop-erueka-consumer/shop-order" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/shop-erueka-consumer/shop-phoneregister" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/shop-erueka-consumer/shop-search" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/shop-erueka-consumer/shop-sso" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/shop-eureka-service/shop-address-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/shop-eureka-service/shop-coupon-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/shop-eureka-service/shop-email-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/shop-eureka-service/shop-index-service" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/shop-eureka-service/shop-order-service" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/shop-eureka-service/shop-product-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/shop-eureka-service/shop-pay-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/shop-eureka-service/shop-phoneregister-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/shop-eureka-service/shop-search-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/shop-eureka-service/shop-searchproduct-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/shop-eureka-service/shop-sso-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/shop-eureka-service/shop-staticresoureces-service" charset="UTF-8" />
   </component>
 </project>

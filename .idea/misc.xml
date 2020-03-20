@@ -16,6 +16,20 @@
         <option value="$PROJECT_DIR$/shop-eureka-service/shop-order-service/pom.xml" />
         <option value="$PROJECT_DIR$/shop-erueka-consumer/shop-order/pom.xml" />
         <option value="$PROJECT_DIR$/shop-eureka-service/shop-address-service/pom.xml" />
+        <option value="$PROJECT_DIR$/shop-erueka-consumer/shop-address/pom.xml" />
+        <option value="$PROJECT_DIR$/shop-erueka-consumer/shop-eamil-web/pom.xml" />
+        <option value="$PROJECT_DIR$/shop-erueka-consumer/shop-phoneregister/pom.xml" />
+        <option value="$PROJECT_DIR$/shop-erueka-consumer/shop-search/pom.xml" />
+        <option value="$PROJECT_DIR$/shop-erueka-consumer/shop-sso/pom.xml" />
+        <option value="$PROJECT_DIR$/shop-eureka-service/shop-coupon-service/pom.xml" />
+        <option value="$PROJECT_DIR$/shop-eureka-service/shop-email-service/pom.xml" />
+        <option value="$PROJECT_DIR$/shop-eureka-service/shop-index-service/pom.xml" />
+        <option value="$PROJECT_DIR$/shop-eureka-service/shop-pay-service/pom.xml" />
+        <option value="$PROJECT_DIR$/shop-eureka-service/shop-phoneregister-service/pom.xml" />
+        <option value="$PROJECT_DIR$/shop-eureka-service/shop-search-service/pom.xml" />
+        <option value="$PROJECT_DIR$/shop-eureka-service/shop-searchproduct-service/pom.xml" />
+        <option value="$PROJECT_DIR$/shop-eureka-service/shop-sso-service/pom.xml" />
+        <option value="$PROJECT_DIR$/shop-eureka-service/shop-staticresoureces-service/pom.xml" />
       </list>
     </option>
   </component>

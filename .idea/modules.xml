@@ -3,17 +3,31 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/hhh-shop.iml" filepath="$PROJECT_DIR$/.idea/hhh-shop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shop-erueka-consumer/shop-address/shop-address.iml" filepath="$PROJECT_DIR$/shop-erueka-consumer/shop-address/shop-address.iml" />
       <module fileurl="file://$PROJECT_DIR$/shop-eureka-service/shop-address-service/shop-address-service.iml" filepath="$PROJECT_DIR$/shop-eureka-service/shop-address-service/shop-address-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/shop-basic/shop-basic.iml" filepath="$PROJECT_DIR$/shop-basic/shop-basic.iml" />
       <module fileurl="file://$PROJECT_DIR$/shop-basic/shop-common/shop-common.iml" filepath="$PROJECT_DIR$/shop-basic/shop-common/shop-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shop-eureka-service/shop-coupon-service/shop-coupon-service.iml" filepath="$PROJECT_DIR$/shop-eureka-service/shop-coupon-service/shop-coupon-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shop-erueka-consumer/shop-eamil-web/shop-eamil-web.iml" filepath="$PROJECT_DIR$/shop-erueka-consumer/shop-eamil-web/shop-eamil-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shop-eureka-service/shop-email-service/shop-email-service.iml" filepath="$PROJECT_DIR$/shop-eureka-service/shop-email-service/shop-email-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/shop-basic/shop-entity/shop-entity.iml" filepath="$PROJECT_DIR$/shop-basic/shop-entity/shop-entity.iml" />
       <module fileurl="file://$PROJECT_DIR$/shop-erueka-consumer/shop-erueka-consumer.iml" filepath="$PROJECT_DIR$/shop-erueka-consumer/shop-erueka-consumer.iml" />
       <module fileurl="file://$PROJECT_DIR$/shop-eureka-service/shop-eureka-service.iml" filepath="$PROJECT_DIR$/shop-eureka-service/shop-eureka-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/shop-erueka-consumer/shop-index/shop-index.iml" filepath="$PROJECT_DIR$/shop-erueka-consumer/shop-index/shop-index.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shop-eureka-service/shop-index-service/shop-index-service.iml" filepath="$PROJECT_DIR$/shop-eureka-service/shop-index-service/shop-index-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/shop-basic/shop-mapper/shop-mapper.iml" filepath="$PROJECT_DIR$/shop-basic/shop-mapper/shop-mapper.iml" />
       <module fileurl="file://$PROJECT_DIR$/shop-erueka-consumer/shop-order/shop-order.iml" filepath="$PROJECT_DIR$/shop-erueka-consumer/shop-order/shop-order.iml" />
       <module fileurl="file://$PROJECT_DIR$/shop-eureka-service/shop-order-service/shop-order-service.iml" filepath="$PROJECT_DIR$/shop-eureka-service/shop-order-service/shop-order-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shop-eureka-service/shop-pay-service/shop-pay-service.iml" filepath="$PROJECT_DIR$/shop-eureka-service/shop-pay-service/shop-pay-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shop-erueka-consumer/shop-phoneregister/shop-phoneregister.iml" filepath="$PROJECT_DIR$/shop-erueka-consumer/shop-phoneregister/shop-phoneregister.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shop-eureka-service/shop-phoneregister-service/shop-phoneregister-service.iml" filepath="$PROJECT_DIR$/shop-eureka-service/shop-phoneregister-service/shop-phoneregister-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/shop-eureka-service/shop-product-service/shop-product-service.iml" filepath="$PROJECT_DIR$/shop-eureka-service/shop-product-service/shop-product-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shop-erueka-consumer/shop-search/shop-search.iml" filepath="$PROJECT_DIR$/shop-erueka-consumer/shop-search/shop-search.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shop-eureka-service/shop-search-service/shop-search-service.iml" filepath="$PROJECT_DIR$/shop-eureka-service/shop-search-service/shop-search-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shop-eureka-service/shop-searchproduct-service/shop-searchproduct-service.iml" filepath="$PROJECT_DIR$/shop-eureka-service/shop-searchproduct-service/shop-searchproduct-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shop-erueka-consumer/shop-sso/shop-sso.iml" filepath="$PROJECT_DIR$/shop-erueka-consumer/shop-sso/shop-sso.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shop-eureka-service/shop-sso-service/shop-sso-service.iml" filepath="$PROJECT_DIR$/shop-eureka-service/shop-sso-service/shop-sso-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shop-eureka-service/shop-staticresoureces-service/shop-staticresoureces-service.iml" filepath="$PROJECT_DIR$/shop-eureka-service/shop-staticresoureces-service/shop-staticresoureces-service.iml" />
     </modules>
   </component>
 </project>
