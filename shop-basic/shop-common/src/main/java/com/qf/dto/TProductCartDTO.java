@@ -39,4 +39,15 @@ public class TProductCartDTO implements Serializable{
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
     }
+	 //得到单个商品的总价
+    public double getDanPrice(){
+        //得到单价
+        BigDecimal priceOff = new BigDecimal(String.valueOf(this.product.getPrice()));
+        //得到数量
+        BigDecimal count = new BigDecimal(String.valueOf(this.getCount()));
+        //得到单个商品总价
+        BigDecimal danPrice = priceOff.multiply(count);
+
+        return danPrice.setScale(2, BigDecimal.ROUND_HALF_UP).doubleValue();
+    }
 }

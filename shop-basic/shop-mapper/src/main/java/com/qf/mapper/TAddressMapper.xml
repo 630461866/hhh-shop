@@ -138,4 +138,9 @@
       isdefault = #{isdefault,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+  <select id="queryAddressList" parameterType="int" resultMap="BaseResultMap">
+    SELECT * FROM t_address WHERE userid=#{userId}
+  </select>
+
 </mapper>

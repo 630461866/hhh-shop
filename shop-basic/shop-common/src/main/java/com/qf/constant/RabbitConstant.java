@@ -8,4 +8,6 @@ public interface RabbitConstant {
     String SMS_SEND_QUEUE = "sms_send_queue";
     String EMAIL_TOPIC_EXCHANGE = "email_topic_exchange";
     String EMAIL_SEND_QUEUE = "email_send_queue";
+	 String ORDER_EXCHANGE = "order_topic_exchange";
+    String ORDER_QUEUE = "order_queue";
 }

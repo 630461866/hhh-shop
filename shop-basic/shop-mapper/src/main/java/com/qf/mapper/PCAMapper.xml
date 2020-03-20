@@ -103,4 +103,12 @@
       district_sqe = #{districtSqe,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  
+  <select id="queryProList" resultMap="BaseResultMap">
+    SELECT * FROM p_c_a WHERE pid=1
+  </select>
+
+  <select id="getListByProName" parameterType="int" resultMap="BaseResultMap">
+    SELECT * FROM p_c_a WHERE pid=#{id}
+  </select>
 </mapper>

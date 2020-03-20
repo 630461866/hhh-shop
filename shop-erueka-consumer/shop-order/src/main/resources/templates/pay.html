@@ -14,9 +14,140 @@
 		<link href="css/cartstyle.css" rel="stylesheet" type="text/css" />
 
 		<link href="css/jsstyle.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<!--<script type="text/javascript" src="js/address.js"></script>-->
+		<script type="text/javascript">
+			$(function () {
+                $(".addressChoose li").each(function(){
+                    debugger
+                    //页面加载时  将默认地址信息添加至结算处
+                    var buy_user = $("li[class='user-addresslist defaultAddr'] span[class='buy-user']").text();
+                    var phone = $("li[class='user-addresslist defaultAddr'] span[class='buy-phone']").text();
+                    var province = $("li[class='user-addresslist defaultAddr'] span[class='province']").text();
+                    var city = $("li[class='user-addresslist defaultAddr'] span[class='city']").text();
+                    var area = $("li[class='user-addresslist defaultAddr'] span[class='dist']").text();
+                    var addressdesc = $("li[class='user-addresslist defaultAddr'] span[class='street']").text();
+                    $("#province").text(province)
+                    $("#city").text(city)
+                    $("#area").text(area)
+                    $("#addressdesc").text(addressdesc)
+                    $("#person").text(buy_user)
+                    $("#tel").text(phone)
 
-		<script type="text/javascript" src="js/address.js"></script>
+                    $("#buy_user").val(buy_user)
+                    $("#phone").val(phone)
+                    $("#buy_province").val(province)
+                    $("#buy_city").val(city)
+                    $("#buy_area").val(area)
+                    $("#buy_addressdesc").val(addressdesc)
+                    //地址选择
+                    $(this).click(function(){
+                        debugger
+                        //先移除所有列表的对象的选中效果
+                        $(".addressChoose li").removeClass("defaultAddr")
+                        //在添加被选中的对象被选中效果
+                        $(this).addClass("defaultAddr")
+                        //获取被选中的地址信息
+                        buy_user = $("li[class='user-addresslist defaultAddr'] span[class='buy-user']").text();
+                        phone = $("li[class='user-addresslist defaultAddr'] span[class='buy-phone']").text();
+						province = $("li[class='user-addresslist defaultAddr'] span[class='province']").text();
+						city = $("li[class='user-addresslist defaultAddr'] span[class='city']").text();
+						area = $("li[class='user-addresslist defaultAddr'] span[class='dist']").text();
+						addressdesc = $("li[class='user-addresslist defaultAddr'] span[class='street']").text();
+                        //往结算处添加信息
+                        $("#province").text(province)
+                        $("#city").text(city)
+                        $("#area").text(area)
+                        $("#addressdesc").text(addressdesc)
+                        $("#person").text(buy_user)
+                        $("#tel").text(phone)
+                        //添加from表单的隐藏元素信息
+                        $("#buy_user").val(buy_user)
+                        $("#phone").val(phone)
+                        $("#buy_province").val(province)
+                        $("#buy_city").val(city)
+                        $("#buy_area").val(area)
+                        $("#buy_addressdesc").val(addressdesc)
+                    })
+                })
+                //物流方式选择
+                $(".op_express_delivery_hot li").each(function(){
+                    $(this).click(function(){
+                        debugger
+                        //先移除所有列表的对象的选中效果
+                        $(".op_express_delivery_hot li").removeClass("selected")
+                        //在添加被选中的对象被选中效果
+                        $(this).addClass("selected")
+                        //往form表单添加信息
+                        var express = $(this).text();
+                        $("#express").val(express)
+                    })
+                })
+                //支付方式选择
+                $(".pay-list li").each(function(){
+                    $(this).click(function(){
+                        debugger
+                        //先移除所有列表的对象的选中效果
+                        $(".pay-list li").removeClass("selected")
+                        //在添加被选中的对象被选中效果
+                        $(this).addClass("selected")
+                        //往form表单添加信息
+                        var paytype = $(this).text();
+                        $("#paytypes").val(paytype)
+                    })
+                })
 
+				//选着优惠券及红包
+				$("#coupon").change(function () {
+				    debugger
+                  	var id = $("#coupon").val()
+					if(id > 0){
+                        var coupon = $("#discountAmount").val()  //可折扣金额
+						var require = $("#discountRequirement").val()   //折扣需求金额
+                        var actualpay= $("#Actualpay").text()
+						if(require < actualpay){
+                            var pay = actualpay-coupon;
+                            $("#Actualpay").text(pay)
+							return
+						}
+						alert("你的总消费额不满足该消费券使用要求")
+						return
+					}
+					return
+                })
+
+                $("#usercoupons").change(function () {
+                    debugger
+                    var id = $(this).val()
+                    if(id > 0){
+                        var usercoupons = $("#usercoupons option .item-remainderprice span").text()  //该红包剩余金额
+                        var actualpay= $("#Actualpay").text()
+						if(actualpay > usercoupons){
+                            var pay = actualpay-usercoupons;
+                            $("#Actualpay").text(pay)
+							return
+						}
+                        var pay = usercoupons-actualpay;
+						$("#Actualpay").text(pay)
+                        return
+                    }
+                    return
+                })
+                //订单提交
+                $("#go").click(function(){
+                    debugger
+					var message = $("#message").val()
+					var coupon = $("#coupon").val()
+                    var usercoupons = $("#usercoupons").val()
+					var Actualpay = $("#Actualpay").text()
+					$("#buy_message").val(message)
+                    $("#buy_coupon").val(coupon)
+                    $("#buy_usercoupon").val(usercoupons)
+					$("#buy_paycount").val(Actualpay)
+                    $("#form").submit()
+                })
+            })
+		</script>
 	</head>
 
 	<body>
@@ -71,28 +202,27 @@
 					<div class="address">
 						<h3>确认收货地址 </h3>
 						<div class="control">
-							<div class="tc-btn createAddr theme-login am-btn am-btn-danger">使用新地址</div>
+							<a th:href="${queryAddressUrl}" class="tc-btn createAddr theme-login am-btn am-btn-danger" >使用新地址</a>
 						</div>
 						<div class="clear"></div>
-						<ul>
-							<div class="per-border"></div>
-							<li class="user-addresslist defaultAddr">
+						<ul class="addressChoose" th:each="address : ${addressList}">
+							<div  class="per-border"></div>
+							<li th:if="${address.isdefault eq '是'}" class="user-addresslist defaultAddr">
 								<div class="address-left">
 									<div class="user DefaultAddr">
 										<span class="buy-address-detail">   
-                   							<span class="buy-user">艾迪 </span>
-											<span class="buy-phone">15871145629</span>
+                   							<span  th:text="${address.shouhuoren}" class="buy-user">艾迪 </span>
+											<span  th:text="${address.phone}" class="buy-phone">15871145629</span>
 										</span>
 									</div>
 									<div class="default-address DefaultAddr">
 										<span class="buy-line-title buy-line-title-type">收货地址：</span>
 											<span class="buy--address-detail">
-								   				<span class="province">湖北省</span>
-												<span class="city">武汉市</span>
-												<span class="dist">洪山区</span>
-												<span class="street">雄楚大道666号(中南财经政法大学)</span>
+								   				<span  th:text="${address.province}" class="province">湖北</span>省
+												<span  th:text="${address.city}" class="city">武汉</span>
+												<span  th:text="${address.area}" class="dist">洪山</span>
+												<span  th:text="${address.addressDesc}" class="street">雄楚大道666号(中南财经政法大学)</span>
 											</span>
-										</span>
 									</div>
 									<ins class="deftip">默认地址</ins>
 								</div>
@@ -111,24 +241,24 @@
 								</div>
 
 							</li>
+
+
 							<div class="per-border"></div>
-							<li class="user-addresslist">
+							<li th:if="${address.isdefault eq '否'}" class="user-addresslist">
 								<div class="address-left">
 									<div class="user DefaultAddr">
 										<span class="buy-address-detail">   
-                   							<span class="buy-user">艾迪 </span>
-											<span class="buy-phone">15871145629</span>
+                   							<span th:text="${address.shouhuoren}" class="buy-user">艾迪 </span>
+											<span th:text="${address.phone}" class="buy-phone">15871145629</span>
 										</span>
 									</div>
 									<div class="default-address DefaultAddr">
 										<span class="buy-line-title buy-line-title-type">收货地址：</span>
 										<span class="buy--address-detail">
-								   				<span class="province">湖北</span>省
-												<span class="city">武汉</span>市
-												<span class="dist">武昌</span>区
-												<span class="street">东湖路75号众环大厦2栋9层902</span>
-										</span>
-
+								   				<span th:text="${address.province}" class="province">湖北</span>省
+												<span th:text="${address.city}" class="city">武汉</span>
+												<span th:text="${address.area}" class="dist">武昌</span>
+												<span th:text="${address.addressDesc}" class="street">东湖路75号众环大厦2栋9层902</span>
 										</span>
 									</div>
 									<ins class="deftip hidden">默认地址</ins>
@@ -139,7 +269,7 @@
 								<div class="clear"></div>
 
 								<div class="new-addr-btn">
-									<a href="#">设为默认</a>
+									<a href="#" class="hidden">设为默认</a>
 									<span class="new-addr-bar">|</span>
 									<a href="#">编辑</a>
 									<span class="new-addr-bar">|</span>
@@ -203,7 +333,7 @@
 							</div>
 							<div class="clear"></div>
 
-							<tr class="item-list">
+							<tr class="item-list" th:each="tProductCartDTO:${userPayList}">
 								<div class="bundle  bundle-last">
 
 									<div class="bundle-main">
@@ -212,11 +342,11 @@
 												<li class="td td-item">
 													<div class="item-pic">
 														<a href="#" class="J_MakePoint">
-															<img src="images/kouhong.jpg_80x80.jpg" class="itempic J_ItemImg"></a>
+															<img th:src="${tProductCartDTO.product.pimage}" class="itempic J_ItemImg"></a>
 													</div>
 													<div class="item-info">
 														<div class="item-basic-info">
-															<a href="#" class="item-title J_MakePoint" data-point="tbcart.8.11">美康粉黛醉美唇膏 持久保湿滋润防水不掉色</a>
+															<a href="#" class="item-title J_MakePoint" data-point="tbcart.8.11"th:text="${tProductCartDTO.product.pname}">美康粉黛醉美唇膏 持久保湿滋润防水不掉色</a>
 														</div>
 													</div>
 												</li>
@@ -229,7 +359,7 @@
 												<li class="td td-price">
 													<div class="item-price price-promo-promo">
 														<div class="price-content">
-															<em class="J_Price price-now">39.00</em>
+															<em class="J_Price price-now" th:text="${tProductCartDTO.product.price}">39.00</em>
 														</div>
 													</div>
 												</li>
@@ -240,7 +370,7 @@
 														<span class="phone-title">购买数量</span>
 														<div class="sl">
 															<input class="min am-btn" name="" type="button" value="-" />
-															<input class="text_box" name="" type="text" value="3" style="width:30px;" />
+															<input class="text_box" name="" type="text" th:value="${tProductCartDTO.count}" style="width:30px;" />
 															<input class="add am-btn" name="" type="button" value="+" />
 														</div>
 													</div>
@@ -248,14 +378,14 @@
 											</li>
 											<li class="td td-sum">
 												<div class="td-inner">
-													<em tabindex="0" class="J_ItemSum number">117.00</em>
+													<em tabindex="0" class="J_ItemSum number" th:text="${tProductCartDTO.danPrice}">117.00</em>
 												</div>
 											</li>
 											<li class="td td-oplist">
 												<div class="td-inner">
 													<span class="phone-title">配送方式</span>
 													<div class="pay-logis">
-														快递<b class="sys_item_freprice">10</b>元
+														<b class="sys_item_freprice">包邮</b>
 													</div>
 												</div>
 											</li>
@@ -267,71 +397,6 @@
 								</div>
 							</tr>
 							<div class="clear"></div>
-							</div>
-
-							<tr id="J_BundleList_s_1911116345_1" class="item-list">
-								<div id="J_Bundle_s_1911116345_1_0" class="bundle  bundle-last">
-									<div class="bundle-main">
-										<ul class="item-content clearfix">
-											<div class="pay-phone">
-												<li class="td td-item">
-													<div class="item-pic">
-														<a href="#" class="J_MakePoint">
-															<img src="images/kouhong.jpg_80x80.jpg" class="itempic J_ItemImg"></a>
-													</div>
-													<div class="item-info">
-														<div class="item-basic-info">
-															<a href="#" target="_blank" title="美康粉黛醉美唇膏 持久保湿滋润防水不掉色" class="item-title J_MakePoint" data-point="tbcart.8.11">美康粉黛醉美唇膏 持久保湿滋润防水不掉色</a>
-														</div>
-													</div>
-												</li>
-												<li class="td td-info">
-													<div class="item-props">
-														<span class="sku-line">颜色：10#蜜橘色+17#樱花粉</span>
-														<span class="sku-line">包装：两支手袋装（送彩带）</span>
-													</div>
-												</li>
-												<li class="td td-price">
-													<div class="item-price price-promo-promo">
-														<div class="price-content">
-															<em class="J_Price price-now">39.00</em>
-														</div>
-													</div>
-												</li>
-											</div>
-
-											<li class="td td-amount">
-												<div class="amount-wrapper ">
-													<div class="item-amount ">
-														<span class="phone-title">购买数量</span>
-														<div class="sl">
-															<input class="min am-btn" name="" type="button" value="-" />
-															<input class="text_box" name="" type="text" value="3" style="width:30px;" />
-															<input class="add am-btn" name="" type="button" value="+" />
-														</div>
-													</div>
-												</div>
-											</li>
-											<li class="td td-sum">
-												<div class="td-inner">
-													<em tabindex="0" class="J_ItemSum number">117.00</em>
-												</div>
-											</li>
-											<li class="td td-oplist">
-												<div class="td-inner">
-													<span class="phone-title">配送方式</span>
-													<div class="pay-logis">
-														包邮
-													</div>
-												</div>
-											</li>
-
-										</ul>
-										<div class="clear"></div>
-
-									</div>
-								</div>
-							</tr>
 							</div>
 							<div class="clear"></div>
 							<div class="pay-total">
@@ -340,7 +405,7 @@
 								<div class="order-user-info">
 									<div id="holyshit257" class="memo">
 										<label>买家留言：</label>
-										<input type="text" title="选填,对本次交易的说明（建议填写已经和卖家达成一致的说明）" placeholder="选填,建议填写和卖家达成一致的说明" class="memo-input J_MakePoint c2c-text-default memo-close">
+										<input type="text" id="message"  title="选填,对本次交易的说明（建议填写已经和卖家达成一致的说明）" placeholder="选填,建议填写和卖家达成一致的说明" class="memo-input J_MakePoint c2c-text-default memo-close">
 										<div class="msg hidden J-msg">
 											<p class="error">最多输入500个字符</p>
 										</div>
@@ -351,50 +416,36 @@
 							<!--优惠券 -->
 							<div class="buy-agio">
 								<li class="td td-coupon">
-
 									<span class="coupon-title">优惠券</span>
-									<select data-am-selected>
-										<option value="a">
-											<div class="c-price">
-												<strong>￥8</strong>
+									<select data-am-selected  id="coupon">
+										<option th:value="0">请选择优惠券</option>
+										<option  th:each="coupon:${couponList}" th:if="${coupon.discountRequirement ge 0}" th:value="${coupon.id}">
+											<div class="c-price" >
+												￥<strong id="discountAmount" th:text="${coupon.discountAmount}" th:value="${coupon.discountAmount}"  >8</strong>
 											</div>
 											<div class="c-limit">
-												【消费满95元可用】
-											</div>
-										</option>
-										<option value="b" selected>
-											<div class="c-price">
-												<strong>￥3</strong>
-											</div>
-											<div class="c-limit">
-												【无使用门槛】
+												【消费满<span id="discountRequirement" th:text="${coupon.discountRequirement}" th:value="${coupon.discountRequirement}" >95</span>元可用】
 											</div>
 										</option>
 									</select>
 								</li>
 
-								<li class="td td-bonus">
-
+								<li class="td td-bonus" >
 									<span class="bonus-title">红包</span>
-									<select data-am-selected>
-										<option value="a">
-											<div class="item-info">
-												¥50.00<span>元</span>
+									<select data-am-selected id="usercoupons">
+										<option th:value="0">请选择红包</option>
+										<option  th:each="usercoupon:${usercouponList}" th:if="${usercoupon.redpacketSurplus gt 0}" th:value="${usercoupon.id}">
+											<div class="item-info" th:switch="${usercoupon.couponId}">
+												<span>¥</span>
+												<span th:case="1">50.00</span>
+												<span th:case="2">100.00</span>
+												<span>元</span>
 											</div>
 											<div class="item-remainderprice">
-												<span>还剩</span>10.40<span>元</span>
-											</div>
-										</option>
-										<option value="b" selected>
-											<div class="item-info">
-												¥50.00<span>元</span>
-											</div>
-											<div class="item-remainderprice">
-												<span>还剩</span>50.00<span>元</span>
+												还剩<span th:text="${usercoupon.redpacketSurplus}">10.40</span>元
 											</div>
 										</option>
 									</select>
-
 								</li>
 
 							</div>
@@ -403,7 +454,7 @@
 							<!--含运费小计 -->
 							<div class="buy-point-discharge ">
 								<p class="price g_price ">
-									合计（含运费） <span>¥</span><em class="pay-sum">244.00</em>
+									合计（含运费） <span>¥</span><em id="paycount" th:value="${totalPrice}" th:text="${totalPrice}" class="pay-sum">244.00</em>
 								</p>
 							</div>
 
@@ -413,7 +464,7 @@
 									<div class="box">
 										<div tabindex="0" id="holyshit267" class="realPay"><em class="t">实付款：</em>
 											<span class="price g_price ">
-                                    <span>¥</span> <em class="style-large-bold-red " id="J_ActualFee">244.00</em>
+												<span>¥</span> <em class="style-large-bold-red " th:value="${totalPrice}" th:text="${totalPrice}"id="Actualpay">244.00</em>
 											</span>
 										</div>
 
@@ -422,18 +473,18 @@
 											<p class="buy-footer-address">
 												<span class="buy-line-title buy-line-title-type">寄送至：</span>
 												<span class="buy--address-detail">
-								   <span class="province">湖北</span>省
-												<span class="city">武汉</span>市
-												<span class="dist">洪山</span>区
-												<span class="street">雄楚大道666号(中南财经政法大学)</span>
+								   				<span class="province" id="province">湖北省</span>
+												<span class="city" id="city">武汉市</span>
+												<span class="dist" id="dist">洪山区</span>
+												<span class="street" id="addressdesc">雄楚大道666号(中南财经政法大学)</span>
 												</span>
 												</span>
 											</p>
 											<p class="buy-footer-address">
 												<span class="buy-line-title">收货人：</span>
 												<span class="buy-address-detail">   
-                                         <span class="buy-user">艾迪 </span>
-												<span class="buy-phone">15871145629</span>
+                                         		<span class="buy-user" id="person">艾迪 </span>
+												<span class="buy-phone" id="tel">15871145629</span>
 												</span>
 											</p>
 										</div>
@@ -441,8 +492,22 @@
 
 									<div id="holyshit269" class="submitOrder">
 										<div class="go-btn-wrap">
-											<a id="J_Go" href="success.html" class="btn-go" tabindex="0" title="点击此按钮，提交订单">提交订单</a>
+											<a id="go" class="btn-go" tabindex="0" title="点击此按钮，提交订单">提交订单</a>
 										</div>
+										<form action="order/creatOrder" method="post" id="form">
+											<input type="hidden" name="oShperson" value="" id="buy_user" />
+											<input type="hidden" name="oShphone" value="" id="phone" />
+											<input type="hidden" name="oPrivince" value="" id="buy_province" />
+											<input type="hidden" name="oCity" value="" id="buy_city" />
+											<input type="hidden" name="oArea" value="" id="buy_area" />
+											<input type="hidden" name="oAddressDesc" value="" id="buy_addressdesc" />
+											<input type="hidden" name="oSendtype" value="" id="express" />
+											<input type="hidden" name="oPaytype" value="" id="paytypes" />
+											<input type="hidden" name="oMessage" value="" id="buy_message" />
+											<input type="hidden" name="oCoupon" value="" id="buy_coupon" />
+											<input type="hidden" name="oRedpacket" value="" id="buy_usercoupon" />
+											<input type="hidden" name="oPaycount" value="" id="buy_paycount" />
+										</form>
 									</div>
 									<div class="clear"></div>
 								</div>

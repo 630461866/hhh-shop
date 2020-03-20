@@ -1,6 +1,7 @@
 package com.qf.service;
-
+import com.qf.dto.ResultBean;
 import com.qf.entity.PCA;
+
 
 public interface PcaService {
     int deleteByPrimaryKey(Integer id);
@@ -9,9 +10,15 @@ public interface PcaService {
 
     int insertSelective(PCA record);
 
-    PCA selectByPrimaryKey(Integer id);
+    ResultBean selectByPrimaryKey(String id);
 
     int updateByPrimaryKeySelective(PCA record);
 
     int updateByPrimaryKey(PCA record);
+
+    ResultBean queryProList();
+
+    ResultBean getCityListByProName(String districtName);
+
+    ResultBean getAreaListByProName(String districtName);
 }

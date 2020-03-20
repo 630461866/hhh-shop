@@ -1,5 +1,5 @@
 package com.qf.service;
-
+import com.qf.dto.ResultBean;
 import com.qf.entity.TAddress;
 
 public interface AddressServcie {
@@ -14,4 +14,10 @@ public interface AddressServcie {
     int updateByPrimaryKeySelective(TAddress record);
 
     int updateByPrimaryKey(TAddress record);
+
+    ResultBean queryAddressList(String userId);
+
+    ResultBean insertAddressByUserId(int userId);
+
+    ResultBean updateAddressDefault(int addressId);
 }

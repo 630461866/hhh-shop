@@ -14,4 +14,6 @@ public interface OrderDetailService {
     int updateByPrimaryKeySelective(TOrderDetail record);
 
     int updateByPrimaryKey(TOrderDetail record);
+
+    void creatOrderDetail(int orderId);
 }

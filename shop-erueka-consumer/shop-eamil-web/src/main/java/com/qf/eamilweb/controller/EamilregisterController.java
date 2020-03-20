@@ -2,7 +2,6 @@ package com.qf.eamilweb.controller;
 
 import com.qf.constant.RedisConstant;
 import com.qf.dto.ResultBean;
-import com.qf.eamilweb.service.IemailService;
 import com.qf.util.RedisUtil;
 
 import org.springframework.beans.factory.annotation.Autowired;

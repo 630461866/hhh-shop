@@ -1,8 +1,9 @@
 package com.qf.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class TOrder {
+public class TOrder implements Serializable{
     private Integer id;
 
     private String oSendtype;
@@ -28,6 +29,12 @@ public class TOrder {
     private String oArea;
 
     private String oAddressDesc;
+
+    private String oMessage;
+
+    private Integer oCoupon;
+
+    private Integer oRedpacket;
 
     public Integer getId() {
         return id;
@@ -131,5 +138,51 @@ public class TOrder {
 
     public void setoAddressDesc(String oAddressDesc) {
         this.oAddressDesc = oAddressDesc == null ? null : oAddressDesc.trim();
+    }
+
+    public String getoMessage() {
+        return oMessage;
+    }
+
+    public void setoMessage(String oMessage) {
+        this.oMessage = oMessage == null ? null : oMessage.trim();
+    }
+
+    public Integer getoCoupon() {
+        return oCoupon;
+    }
+
+    public void setoCoupon(Integer oCoupon) {
+        this.oCoupon = oCoupon;
+    }
+
+    public Integer getoRedpacket() {
+        return oRedpacket;
+    }
+
+    public void setoRedpacket(Integer oRedpacket) {
+        this.oRedpacket = oRedpacket;
+    }
+
+    @Override
+    public String toString() {
+        return "TOrder{" +
+                "id=" + id +
+                ", oSendtype='" + oSendtype + '\'' +
+                ", oPaytype='" + oPaytype + '\'' +
+                ", oPaycount=" + oPaycount +
+                ", oOrderdate=" + oOrderdate +
+                ", oStatus=" + oStatus +
+                ", oUserid=" + oUserid +
+                ", oShperson='" + oShperson + '\'' +
+                ", oShphone='" + oShphone + '\'' +
+                ", oPrivince='" + oPrivince + '\'' +
+                ", oCity='" + oCity + '\'' +
+                ", oArea='" + oArea + '\'' +
+                ", oAddressDesc='" + oAddressDesc + '\'' +
+                ", oMessage='" + oMessage + '\'' +
+                ", oCoupon=" + oCoupon +
+                ", oRedpacket=" + oRedpacket +
+                '}';
     }
 }

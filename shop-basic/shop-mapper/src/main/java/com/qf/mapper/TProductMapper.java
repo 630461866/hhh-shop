@@ -14,7 +14,4 @@ public interface TProductMapper {
     int updateByPrimaryKeySelective(TProduct record);
 
     int updateByPrimaryKey(TProduct record);
-
-
-
 }

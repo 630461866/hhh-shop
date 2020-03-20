@@ -1,5 +1,6 @@
 package com.qf.service;
 
+import com.qf.dto.ResultBean;
 import com.qf.entity.TOrder;
 
 public interface OrderService {
@@ -15,4 +16,8 @@ public interface OrderService {
     int updateByPrimaryKeySelective(TOrder record);
 
     int updateByPrimaryKey(TOrder record);
+
+    ResultBean addOrder(String userId);
+
+    ResultBean updateOrderById(int orderId);
 }

@@ -1,6 +1,8 @@
 package com.qf.entity;
 
-public class TAddress {
+import java.io.Serializable;
+
+public class TAddress implements Serializable{
     private Integer id;
 
     private String shouhuoren;
@@ -89,5 +91,20 @@ public class TAddress {
 
     public void setIsdefault(String isdefault) {
         this.isdefault = isdefault == null ? null : isdefault.trim();
+    }
+
+    @Override
+    public String toString() {
+        return "TAddress{" +
+                "id=" + id +
+                ", shouhuoren='" + shouhuoren + '\'' +
+                ", phone='" + phone + '\'' +
+                ", province='" + province + '\'' +
+                ", city='" + city + '\'' +
+                ", area='" + area + '\'' +
+                ", addressDesc='" + addressDesc + '\'' +
+                ", userid=" + userid +
+                ", isdefault='" + isdefault + '\'' +
+                '}';
     }
 }

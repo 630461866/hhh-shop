@@ -14,6 +14,8 @@ public class TProduct implements Serializable{
 
     private Long typeId;
 
+    private Integer stock;
+
     private Byte status;
 
     private String pimage;
@@ -66,6 +68,14 @@ public class TProduct implements Serializable{
 
     public void setTypeId(Long typeId) {
         this.typeId = typeId;
+    }
+
+    public Integer getStock() {
+        return stock;
+    }
+
+    public void setStock(Integer stock) {
+        this.stock = stock;
     }
 
     public Byte getStatus() {
