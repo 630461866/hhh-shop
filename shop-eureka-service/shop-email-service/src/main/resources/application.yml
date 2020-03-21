@@ -7,6 +7,12 @@ spring:
     username: root
     password: 199907
 
+  redis:
+    host: 175.24.77.8
+    port: 6379
+    password:
+    timeout:
+
   rabbitmq:
     host: 175.24.77.8
     port: 5672

@@ -2,6 +2,12 @@ spring:
   application:
     name: shop-index
 
+  redis:
+    host: 175.24.77.8
+    port: 6379
+    password:
+    timeout:
+
 server:
   port: 9091
 

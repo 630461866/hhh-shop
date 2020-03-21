@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 public interface IUserservice {
 
     @RequestMapping("user/checkLogin")
-    ResultBean checkLogin(@RequestParam("uname") String uname,@RequestParam("password") String password);
+    ResultBean checkLogin(@RequestParam("uname") String uname, @RequestParam("password") String password);
 
     @RequestMapping("user/checkIsLogin")
-    ResultBean checkIsLogin( String uuid);
+    ResultBean checkIsLogin(String uuid);
 }

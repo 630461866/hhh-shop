@@ -13,5 +13,5 @@ import org.springframework.web.bind.annotation.RequestParam;
 public interface IUserService {
 
     @RequestMapping("user/doRegist")
-    ResultBean regist(@RequestParam(value = "phone") String phone,@RequestParam("code") String code,@RequestParam(value = "password") String password);
+    ResultBean regist(@RequestParam(value = "phone") String phone, @RequestParam("code") String code, @RequestParam(value = "password") String password);
 }

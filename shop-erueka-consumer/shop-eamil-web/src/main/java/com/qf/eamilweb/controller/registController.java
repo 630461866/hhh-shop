@@ -33,10 +33,9 @@ public class registController {
         ResultBean resultBean = service.registByEmail(email,password);
         if (resultBean.getErrno()==0) {
             //这里可以直接重定向到登陆页面
-            return "redirect:http://localhost:8090/user/showindex";
+            return "redirect:http://localhost:8090/user/checkLogin";
         }
-        return "redirect:showRegist";
+        return "redirect:user/showRegist";
     }
-
 
 }

@@ -5,7 +5,6 @@ import com.qf.constant.CookieConstant;
 import com.qf.dto.ResultBean;
 import com.qf.entity.TProductType;
 import com.qf.service.IProductTypeService;
-import com.qf.service.IUserService;
 import com.qf.util.HttpClientUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,8 +21,6 @@ public class IndexController {
     @Autowired
     private IProductTypeService productTypeService;
 
-    @Autowired
-    private IUserService userService;
 
     @RequestMapping({"","index"})
     public String show(Model model){
@@ -46,6 +43,7 @@ public class IndexController {
 
         //// user_login=dbe06afc-8540-4b74-8035-99e188d33933
         String result = HttpClientUtils.doGet(url, cookie);
+
         //把result字符串封装成ResultBean对象
         //jackjson
         Gson gson = new Gson();

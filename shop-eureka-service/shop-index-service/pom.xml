@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.qf</groupId>
-	<artifactId>shop-index-service</artifactId>
+	<artifactId>shop-product-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>shop-index-service</name>
+	<name>shop-product-service</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
